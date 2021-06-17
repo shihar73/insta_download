@@ -3,7 +3,7 @@ from selenium import webdriver
 import pickle5 as pickle
 from os.path import join, dirname
 from dotenv import load_dotenv
-import time
+
 
 class cookies:
     try:

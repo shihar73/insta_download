@@ -15,7 +15,6 @@ class insta_download:
             else:
                 f_name = "/root/Downloads/" + name
 
-            print(f_name)
             output = open(f_name, "wb")
             output.write(resource.read())
             output.close
