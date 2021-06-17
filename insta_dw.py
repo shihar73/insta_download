@@ -44,6 +44,7 @@ class DownloadLink:
                 dw.dw_vid(dw_url, self.loc)
         except:
             print("Error: Didi't get download link")
+            driver.quit()
 
 
     def get_link(self, url, loc):
@@ -57,6 +58,7 @@ class DownloadLink:
                 self.url = url
         else:
             print('Error: Check url')
+            exit()
 
         self.find_url()
 

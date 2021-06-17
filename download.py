@@ -4,7 +4,7 @@ from urllib.parse import urlparse
 
 
 class insta_download:
-    # This is download videos and images use source url
+    # This is download videos and images use source url 
     def dw_vid(self, url, root):
         try:
             name = urlparse(url).path[-25:]
@@ -18,7 +18,7 @@ class insta_download:
             output = open(f_name, "wb")
             output.write(resource.read())
             output.close
-            print(f_name, 'download success')
+            print(f_name, 'download successful')
         except:
             print("Error: Download Failed check url or location")
 
