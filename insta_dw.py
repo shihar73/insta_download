@@ -4,11 +4,10 @@ from bs4 import BeautifulSoup
 import requests
 import urllib
 import json
-import insta_log
-import download
+from . import insta_log
+from . import download
 
 class DownloadLink:
-
 
     def find_url(self):
         try:
