@@ -2,3 +2,5 @@
 ..env.swp
 cookies.pkl
 .vscode
+.idea
+__pycache__/
