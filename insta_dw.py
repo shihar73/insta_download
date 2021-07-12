@@ -21,9 +21,9 @@ class DownloadLink:
             options.add_argument("--window-size=1920,1080")
             options.add_argument("--headless")
             options.add_argument("--disable-gpu")
-            options.add_argument("user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10.9; rv:35.0) Gecko/20100101 Firefox/35.0")
 
             driver = webdriver.Chrome(options=options)
+            driver.execute_cdp_cmd('Network.setUserAgentOverride', {"userAgent": 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36'})
 
             dw = download.insta_download()
             driver.get('https://www.instagram.com/')
@@ -38,6 +38,7 @@ class DownloadLink:
                 cookies = pickle.load(open("cookies.pkl", "rb"))
                 for cookie in cookies:
                     driver.add_cookie(cookie)
+                    
 
             driver.get(self.url)
             print(driver.title)
