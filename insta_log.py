@@ -15,8 +15,14 @@ class cookies:
             user_name = os.environ.get("INSTA_USER_NAME")
             insta_pass = os.environ.get("INSTA_PASS")
 
-            PATH = "/usr/bin/chromedriver"
-            driver = webdriver.Chrome(PATH)
+            options = webdriver.ChromeOptions()
+            options.add_argument("--window-size=1920,1080")
+            options.add_argument("--headless")
+            options.add_argument("--disable-gpu")
+            options.add_argument("user-agent=Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101 Firefox/78.0")
+
+            driver = webdriver.Chrome(options=options)
+
             try:
                  driver.get('https://www.instagram.com/accounts/login/')
             except:

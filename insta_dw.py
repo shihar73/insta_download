@@ -11,8 +11,15 @@ class DownloadLink:
 
     def find_url(self):
         try:
-            PATH = "/usr/bin/chromedriver"
-            driver = webdriver.Chrome(PATH)
+
+            options = webdriver.ChromeOptions()
+            options.add_argument("--window-size=1920,1080")
+            options.add_argument("--headless")
+            options.add_argument("--disable-gpu")
+            options.add_argument("user-agent=Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101 Firefox/78.0")
+
+            driver = webdriver.Chrome(options=options)
+
             dw = download.insta_download()
             driver.get('https://www.instagram.com/')
             try:
