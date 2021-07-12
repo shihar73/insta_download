@@ -4,8 +4,13 @@ from bs4 import BeautifulSoup
 import requests
 import urllib
 import json
-from . import insta_log
-from . import download
+
+if __name__ == "__main__":
+    import insta_log
+    import download
+else:
+    from . import insta_log
+    from . import download
 
 class DownloadLink:
 
@@ -35,8 +40,9 @@ class DownloadLink:
                     driver.add_cookie(cookie)
 
             driver.get(self.url)
+            print(driver.title)
             soup = BeautifulSoup(driver.page_source, "html.parser")
-
+            print(soup)
             main_data = json.loads(soup.find("body").text)
             data = main_data['graphql']['shortcode_media']
 

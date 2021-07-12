@@ -29,6 +29,7 @@ class cookies:
                 driver.quit()
 
             driver.implicitly_wait(10)
+            print(driver.title)
 
             try:
                 name = driver.find_elements_by_name("username")
